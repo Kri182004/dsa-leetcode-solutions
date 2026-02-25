@@ -1,0 +1,25 @@
+class Solution {
+public:
+    string longestCommonPrefix(vector<string>& strs) {
+        string to_compare_with=strs[0];
+        int min_count=INT_MAX;
+        int count_prefix;
+        if(strs.size()==1 )return strs[0];
+        for(int i=1; i<strs.size();i++){
+            string curr=strs[i];
+            count_prefix=0;
+            for(int j=0; j<curr.length();j++){
+                if(to_compare_with[j]!=curr[j]){
+                    break;
+                }
+                count_prefix++;
+
+            }
+            min_count=min(min_count,count_prefix);
+            cout<<count_prefix;
+            }
+            cout<<count_prefix;
+            return to_compare_with.substr(0,min_count);
+
+    }
+};
